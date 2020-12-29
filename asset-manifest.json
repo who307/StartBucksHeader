@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/StartbucksHeader/static/css/main.90fb86f2.chunk.css",
-    "main.js": "/StartbucksHeader/static/js/main.685cde95.chunk.js",
-    "main.js.map": "/StartbucksHeader/static/js/main.685cde95.chunk.js.map",
+    "main.css": "/StartbucksHeader/static/css/main.1854ccf9.chunk.css",
+    "main.js": "/StartbucksHeader/static/js/main.28795f3e.chunk.js",
+    "main.js.map": "/StartbucksHeader/static/js/main.28795f3e.chunk.js.map",
     "runtime-main.js": "/StartbucksHeader/static/js/runtime-main.f05e7c35.js",
     "runtime-main.js.map": "/StartbucksHeader/static/js/runtime-main.f05e7c35.js.map",
     "static/js/2.fdf5ff23.chunk.js": "/StartbucksHeader/static/js/2.fdf5ff23.chunk.js",
@@ -10,13 +10,13 @@
     "static/js/3.f2f71352.chunk.js": "/StartbucksHeader/static/js/3.f2f71352.chunk.js",
     "static/js/3.f2f71352.chunk.js.map": "/StartbucksHeader/static/js/3.f2f71352.chunk.js.map",
     "index.html": "/StartbucksHeader/index.html",
-    "static/css/main.90fb86f2.chunk.css.map": "/StartbucksHeader/static/css/main.90fb86f2.chunk.css.map",
+    "static/css/main.1854ccf9.chunk.css.map": "/StartbucksHeader/static/css/main.1854ccf9.chunk.css.map",
     "static/js/2.fdf5ff23.chunk.js.LICENSE.txt": "/StartbucksHeader/static/js/2.fdf5ff23.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.f05e7c35.js",
     "static/js/2.fdf5ff23.chunk.js",
-    "static/css/main.90fb86f2.chunk.css",
-    "static/js/main.685cde95.chunk.js"
+    "static/css/main.1854ccf9.chunk.css",
+    "static/js/main.28795f3e.chunk.js"
   ]
 }
