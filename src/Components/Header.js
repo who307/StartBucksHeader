@@ -5,85 +5,61 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectCoffee: false,
-      selectMenu: false,
-      selectStore: false,
-      selectRespon: false,
-      selectStarbucks: false,
-      selectWhats: false,
-      
+      Coffee: false,
+      Menu: false,
+      Store: false,
+      Respon: false,
+      Starbucks: false,
+      Whats: false,
+
       menuOpen: false
     }
   }
-  selectCoffee = () => {
+
+  selectMenu = (e) => {
+
+    let selectCoffee;
+    let selectMenu;
+    let selectStore;
+    let selectRespon;
+    let selectStarbucks;
+    let selectWhats;
+
+    if (e.target.className === "Coffee ") {
+      selectCoffee = true;
+    }
+    if (e.target.className === "Menu ") {
+      selectMenu = true;
+    }
+    if (e.target.className === "Store ") {
+      selectStore = true;
+    }
+    if (e.target.className === "Respon ") {
+      selectRespon = true;
+    }
+    if (e.target.className === "Starbucks ") {
+      selectStarbucks = true;
+    }
+    if (e.target.className === "Whats ") {
+      selectWhats = true;
+   }
     this.setState({
-      selectCoffee: true,
-      selectMenu: false,
-      selectStore: false,
-      selectRespon: false,
-      selectStarbucks: false,
-      selectWhats: false
-    });
-  }
-  selectMenu = () => {
-    this.setState({
-      selectCoffee: false,
-      selectMenu: true,
-      selectStore: false,
-      selectRespon: false,
-      selectStarbucks: false,
-      selectWhats: false
-    });
-  }
-  selectStore = () => {
-    this.setState({
-      selectCoffee: false,
-      selectMenu: false,
-      selectStore: true,
-      selectRespon: false,
-      selectStarbucks: false,
-      selectWhats: false
-    });
-  }
-  selectRespon = () => {
-    this.setState({
-      selectCoffee: false,
-      selectMenu: false,
-      selectStore: false,
-      selectRespon: true,
-      selectStarbucks: false,
-      selectWhats: false
-    });
-  }
-  selectStarbucks = () => {
-    this.setState({
-      selectCoffee: false,
-      selectMenu: false,
-      selectStore: false,
-      selectRespon: false,
-      selectStarbucks: true,
-      selectWhats: false
-    });
-  }
-  selectWhats = () => {
-    this.setState({
-      selectCoffee: false,
-      selectMenu: false,
-      selectStore: false,
-      selectRespon: false,
-      selectStarbucks: false,
-      selectWhats: true
-    });
+      Coffee: selectCoffee ? !this.state.Coffee : "",
+      Menu: selectMenu ? !this.state.Menu : "" ,
+      Store: selectStore ? !this.state.Store : "",
+      Respon: selectRespon ? !this.state.Respon : "",
+      Starbucks: selectStarbucks ? !this.state.Starbucks : "",
+      Whats: selectWhats ? !this.state.Whats : ""
+    })
   }
   CategoryClose = () => {
     this.setState({
-      selectCoffee: false,
-      selectMenu: false,
-      selectStore: false,
-      selectRespon: false,
-      selectStarbucks: false,
-      selectWhats: false
-
+      Coffee: false,
+      Menu: false,
+      Store: false,
+      Respon: false,
+      Starbucks: false,
+      Whats: false
     });
   }
   MenuToggle = () => {
@@ -91,6 +67,7 @@ class Header extends Component {
       menuOpen: !this.state.menuOpen
     });
   }
+
   render() {
     return (
       <header>
@@ -115,18 +92,18 @@ class Header extends Component {
               </div>
               <div className="Header-categoryMenu">
                 <ul>
-                  <li className={(this.state.selectCoffee ? 'Header-categoryMenu-hover' : "")}
-                    onMouseOver={this.selectCoffee}>COFFEE</li>
-                  <li className={(this.state.selectMenu ? 'Header-categoryMenu-hover' : '')}
+                  <li className={"Coffee " + (this.state.Coffee ? 'Header-categoryMenu-hover' : '')}
+                    onMouseOver={this.selectMenu}>COFFEE</li>
+                  <li className={"Menu " + (this.state.Menu ? 'Header-categoryMenu-hover' : '')}
                     onMouseOver={this.selectMenu}>MENU</li>
-                  <li className={(this.state.selectStore ? 'Header-categoryMenu-hover' : '')}
-                    onMouseOver={this.selectStore}>STORE</li>
-                  <li className={(this.state.selectRespon ? 'Header-categoryMenu-hover' : '')}
-                    onMouseOver={this.selectRespon}>RESPONSIBILITY</li>
-                  <li className={(this.state.selectStarbucks ? 'Header-categoryMenu-hover' : '')}
-                    onMouseOver={this.selectStarbucks}>STARBUCKS REWARDS</li>
-                  <li className={(this.state.selectWhats ? 'Header-categoryMenu-hover' : '')}
-                    onMouseOver={this.selectWhats}>WHAT'S NEW</li>
+                  <li className={"Store " + (this.state.Store ? 'Header-categoryMenu-hover' : '')}
+                    onMouseOver={this.selectMenu}>STORE</li>
+                  <li className={"Respon " + (this.state.Respon ? 'Header-categoryMenu-hover' : '')}
+                    onMouseOver={this.selectMenu}>RESPONSIBILITY</li>
+                  <li className={"Starbucks " + (this.state.Starbucks ? 'Header-categoryMenu-hover' : '')}
+                    onMouseOver={this.selectMenu}>STARBUCKS REWARDS</li>
+                  <li className={"Whats " + (this.state.Whats ? 'Header-categoryMenu-hover' : '')}
+                    onMouseOver={this.selectMenu}>WHAT'S NEW</li>
                 </ul>
               </div>
             </div>
@@ -134,7 +111,7 @@ class Header extends Component {
         </div>
         {/* 카테고리영역 */}
         <div className="category-wrap">
-          <div className={(this.state.selectCoffee ? 'categoryMenu-sub01 ' : '') + 'off'}
+          <div className={(this.state.Coffee ? 'categoryMenu-sub01 ' : '') + 'off'}
             onMouseLeave={this.CategoryClose}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
@@ -203,7 +180,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className={(this.state.selectMenu ? 'categoryMenu-sub02 ' : '') + 'off'}
+          <div className={(this.state.Menu ? 'categoryMenu-sub02 ' : '') + 'off'}
             onMouseLeave={this.CategoryClose}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
@@ -263,7 +240,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className={(this.state.selectStore ? 'categoryMenu-sub03 ' : '') + 'off'}
+          <div className={(this.state.Store ? 'categoryMenu-sub03 ' : '') + 'off'}
             onMouseLeave={this.CategoryClose}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
@@ -303,7 +280,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className={(this.state.selectRespon ? 'categoryMenu-sub04 ' : '') + 'off'}
+          <div className={(this.state.Respon ? 'categoryMenu-sub04 ' : '') + 'off'}
             onMouseLeave={this.CategoryClose}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
@@ -347,7 +324,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className={(this.state.selectStarbucks ? 'categoryMenu-sub05 ' : '') + 'off'}
+          <div className={(this.state.Starbucks ? 'categoryMenu-sub05 ' : '') + 'off'}
             onMouseLeave={this.CategoryClose}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
@@ -385,7 +362,7 @@ class Header extends Component {
               </div>
             </div>
           </div>
-          <div className={(this.state.selectWhats ? 'categoryMenu-sub06 ' : '') + 'off'}
+          <div className={(this.state.Whats ? 'categoryMenu-sub06 ' : '') + 'off'}
             onMouseLeave={this.CategoryClose}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
