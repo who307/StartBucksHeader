@@ -17,7 +17,7 @@ class Header extends Component {
   }
 
   selectMenu = (e) => {
-
+    e.preventDefault();
     let selectCoffee;
     let selectMenu;
     let selectStore;
@@ -52,7 +52,7 @@ class Header extends Component {
       Whats: selectWhats ? !this.state.Whats : ""
     })
   }
-  CategoryClose = () => {
+  CloseCategory= () => {
     this.setState({
       Coffee: false,
       Menu: false,
@@ -62,7 +62,7 @@ class Header extends Component {
       Whats: false
     });
   }
-  MenuToggle = () => {
+  ToggleMenu= () => {
     this.setState({
       menuOpen: !this.state.menuOpen
     });
@@ -78,10 +78,10 @@ class Header extends Component {
             <div className="Mobile-icon">
               <img alt="마이스타벅스" src="https://www.starbucks.co.kr/common/img/common/icon_user_m.png"></img>
               <img alt="마이위치" src="https://www.starbucks.co.kr/common/img/common/icon_spot_m.png"></img>
-              <img onClick={this.MenuToggle} alt="마이메뉴" src="https://www.starbucks.co.kr/common/img/common/btn_berger_m.png"></img>
+              <img onClick={this.ToggleMenu} alt="마이메뉴" src="https://www.starbucks.co.kr/common/img/common/btn_berger_m.png"></img>
             </div>
             <div className="Header-menu">
-              <div onMouseOver={this.CategoryClose} className="Header-topMenu">
+              <div onMouseOver={this.CloseCategory} className="Header-topMenu">
                 <span>Sign In</span>
                 <span>My Starbucks</span>
                 <span>Customer Service & Ideas</span>
@@ -112,7 +112,7 @@ class Header extends Component {
         {/* 카테고리영역 */}
         <div className="category-wrap">
           <div className={(this.state.Coffee ? 'categoryMenu-sub01 ' : '') + 'off'}
-            onMouseLeave={this.CategoryClose}>
+            onMouseLeave={this.CloseCategory}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
                 <ul>
@@ -181,7 +181,7 @@ class Header extends Component {
             </div>
           </div>
           <div className={(this.state.Menu ? 'categoryMenu-sub02 ' : '') + 'off'}
-            onMouseLeave={this.CategoryClose}>
+            onMouseLeave={this.CloseCategory}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
                 <ul>
@@ -241,7 +241,7 @@ class Header extends Component {
             </div>
           </div>
           <div className={(this.state.Store ? 'categoryMenu-sub03 ' : '') + 'off'}
-            onMouseLeave={this.CategoryClose}>
+            onMouseLeave={this.CloseCategory}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
                 <ul>
@@ -281,7 +281,7 @@ class Header extends Component {
             </div>
           </div>
           <div className={(this.state.Respon ? 'categoryMenu-sub04 ' : '') + 'off'}
-            onMouseLeave={this.CategoryClose}>
+            onMouseLeave={this.CloseCategory}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
                 <ul>
@@ -325,7 +325,7 @@ class Header extends Component {
             </div>
           </div>
           <div className={(this.state.Starbucks ? 'categoryMenu-sub05 ' : '') + 'off'}
-            onMouseLeave={this.CategoryClose}>
+            onMouseLeave={this.CloseCategory}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
                 <ul>
@@ -363,7 +363,7 @@ class Header extends Component {
             </div>
           </div>
           <div className={(this.state.Whats ? 'categoryMenu-sub06 ' : '') + 'off'}
-            onMouseLeave={this.CategoryClose}>
+            onMouseLeave={this.CloseCategory}>
             <div className="menu-div01">
               <div className="menu-subdiv01">
                 <ul>
@@ -416,7 +416,7 @@ class Header extends Component {
         <div className={'Mobile-menu ' + (this.state.menuOpen ? 'menuOpen' : '')}>
           <div className="Mobile-wrap">
             <ul className="Mobile-search">
-              <img className="closeBtn" onClick={this.MenuToggle} alt="닫기" src="https://www.starbucks.co.kr/common/img/common/btn_gnb_close.png"></img>
+              <img className="closeBtn" onClick={this.ToggleMenu} alt="닫기" src="https://www.starbucks.co.kr/common/img/common/btn_gnb_close.png"></img>
               <input type="text"></input>
               <div className="Mobile-searchBtn">Search</div>
             </ul>
